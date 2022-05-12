@@ -12,6 +12,8 @@ const UserSearch = () => {
 
   const handleChange = (e) => setText(e.target.value)
 
+  console.log(users)
+
   const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -22,6 +24,7 @@ const UserSearch = () => {
         type: "SET_LOADING",
       })
       const users = await searchUsers(text)
+      console.log(users)
       dispatch({
         type: "GET_USERS",
         payload: users,
