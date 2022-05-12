@@ -14,8 +14,16 @@ export const searchUsers = async (text) => {
   const params = new URLSearchParams({
     q: text,
   })
+  // const response = await fetch(`${GITHUB_URL}/search/users?${params}`, {
+  //   headers: {
+  //     Authorization: `token ${GITHUB_TOKEN}`,
+  //   },
   const response = await github.get(`/search/users?${params}`)
   return response.data.items
+  //})
+
+  // const { items } = await response.json()
+  // return items
 }
 
 // Get user and repos
@@ -27,7 +35,7 @@ export const getUserAndRepos = async (login) => {
   ])
   return { user: user.data, repos: repos.data }
 }
-// // Get User profile
+//Get User profile
 // export const getUser = async (login) => {
 //   const response = await fetch(`${GITHUB_URL}/users/${login}`, {
 //     headers: {

@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom"
 import GithubContext from "../context/github/GithubContext"
 import Spinner from "../components/layout/Spinner"
 import RepoList from "../components/repos/RepoList"
+// import { getUser, getUserRepos } from "../context/github/GithubActions"
 import { getUserAndRepos } from "../context/github/GithubActions"
 
 const User = () => {
@@ -21,12 +22,11 @@ const User = () => {
       // const userRepoData = await getUserRepos(params.login)
       // dispatch({ type: "GET_REPOS", payload: userRepoData })
     }
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     // getUser(params.login)
     // getUserRepos(params.login)
 
     getUserData()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, params.login])
 
   const {

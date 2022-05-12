@@ -26,6 +26,7 @@ const UserSearch = () => {
         type: "GET_USERS",
         payload: users,
       })
+
       setText("")
     }
   }
